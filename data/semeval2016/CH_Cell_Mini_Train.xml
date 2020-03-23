@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Reviews>
+    <Review rid="1">
+        <sentences>
+            <sentence id="1:0">
+                <text>今天有幸拿到了港版白色iPhone 5真机，</text>
+            </sentence>
+            <sentence id="1:1">
+                <text>试玩了一下，说说感受吧：</text>
+            </sentence>
+            <sentence id="1:2">
+                <text>1. 真机尺寸宽度与4/4s保持一致没有变化，</text>
+            </sentence>
+            <sentence id="1:3">
+                <text>长度多了大概一厘米，</text>
+            </sentence>
+            <sentence id="1:4">
+                <text>也就是之前所说的多了一排的图标。</text>
+            </sentence>
+            <sentence id="1:5">
+                <text>2. 真机重量比上一代轻了很多，</text>
+                <Opinions>
+                    <Opinion category="PHONE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="1:6">
+                <text>个人感觉跟i9100的重量差不多。</text>
+            </sentence>
+            <sentence id="1:7">
+                <text>（用惯上一代的朋友可能需要一段时间适应了）</text>
+            </sentence>
+            <sentence id="1:8">
+                <text>3. 由于目前还没有版的SIM卡，</text>
+            </sentence>
+            <sentence id="1:9">
+                <text>无法插卡使用，</text>
+            </sentence>
+            <sentence id="1:10">
+                <text>有购买的朋友要注意了，</text>
+            </sentence>
+            <sentence id="1:11">
+                <text>并非简单的剪卡就可以用，</text>
+            </sentence>
+            <sentence id="1:12">
+                <text>而是需要去运营商更换新一代的SIM卡。</text>
+            </sentence>
+            <sentence id="1:13">
+                <text>4. 屏幕显示效果确实比上一代有进步，</text>
+                <Opinions>
+                    <Opinion category="DISPLAY#QUALITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="1:14">
+                <text>不论是从清晰度还是不同角度的视角，</text>
+            </sentence>
+            <sentence id="1:15">
+                <text>iPhone 5绝对要更上一层，</text>
+            </sentence>
+            <sentence id="1:16">
+                <text>我想这也许是相对上一代最有意义的升级了。</text>
+            </sentence>
+            <sentence id="1:17">
+                <text>5. 新的数据接口更小，</text>
+                <Opinions>
+                    <Opinion category="PORTS#CONNECTIVITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="1:18">
+                <text>比上一代更好用更方便，</text>
+            </sentence>
+            <sentence id="1:19">
+                <text>使用的过程会有这样的体会。</text>
+            </sentence>
+            <sentence id="1:20">
+                <text>6. 从简单的几个操作来讲速度比4s要快，</text>
+                <Opinions>
+                    <Opinion category="CPU#OPERATION_PERFORMANCE" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="1:21">
+                <text>这个不用测试软件也能感受出来，</text>
+            </sentence>
+            <sentence id="1:22">
+                <text>比如程序的调用以及照片的拍摄和浏览。</text>
+            </sentence>
+            <sentence id="1:23">
+                <text>不过，</text>
+            </sentence>
+            <sentence id="1:24">
+                <text>目前水货市场上坑爹的价格，</text>
+            </sentence>
+            <sentence id="1:25">
+                <text>最好大家可以再观望一下，</text>
+            </sentence>
+            <sentence id="1:26">
+                <text>不要急着出手。</text>
+            </sentence>
+        </sentences>
+    </Review>
+    <Review rid="2">
+        <sentences>
+            <sentence id="2:0">
+                <text>　1，外观上，</text>
+            </sentence>
+            <sentence id="2:1">
+                <text>iPhone5不是用来ZB的，</text>
+            </sentence>
+            <sentence id="2:2">
+                <text>所以别人看不看得出来，</text>
+            </sentence>
+            <sentence id="2:3">
+                <text>并不是我关心的问题。</text>
+            </sentence>
+            <sentence id="2:4">
+                <text>4寸的屏幕，</text>
+                <Opinions>
+                    <Opinion category="DISPLAY#QUALITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="2:5">
+                <text>体验还不错，</text>
+            </sentence>
+            <sentence id="2:6">
+                <text>但更轻薄这一点，</text>
+            </sentence>
+            <sentence id="2:7">
+                <text>非常喜欢。</text>
+            </sentence>
+            <sentence id="2:8">
+                <text>至于所谓的质感，</text>
+            </sentence>
+            <sentence id="2:9">
+                <text>跟前后面玻璃的确实有不同，</text>
+            </sentence>
+            <sentence id="2:10">
+                <text>但5的手感也是相当的给力，</text>
+                <Opinions>
+                    <Opinion category="PHONE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="2:11">
+                <text>比起有些塑料壳子的强不知道多少倍。</text>
+            </sentence>
+            <sentence id="2:12">
+                <text>　　2，iOS6在iPhone5上的体验，</text>
+            </sentence>
+            <sentence id="2:13">
+                <text>还是相当完善的，</text>
+            </sentence>
+            <sentence id="2:14">
+                <text>没有4S的各种闪退。</text>
+            </sentence>
+            <sentence id="2:15">
+                <text>全景照片真的很爽!</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="2:16">
+                <text>　　3，前置摄像头，</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#QUALITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="2:17">
+                <text>清晰了很多，</text>
+            </sentence>
+            <sentence id="2:18">
+                <text>但用处并不是特别大，</text>
+            </sentence>
+            <sentence id="2:19">
+                <text>自拍的癖好木有....</text>
+            </sentence>
+            <sentence id="2:20">
+                <text>　　4，背面的镜头感觉提升了一些，</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="2:21">
+                <text>但不太明显，</text>
+            </sentence>
+            <sentence id="2:22">
+                <text>不过对于我这种非摄影发烧友，</text>
+            </sentence>
+            <sentence id="2:23">
+                <text>足足够够了，</text>
+            </sentence>
+            <sentence id="2:24">
+                <text>各位别指望跟单反比，</text>
+            </sentence>
+            <sentence id="2:25">
+                <text>要冷静。</text>
+            </sentence>
+            <sentence id="2:26">
+                <text>　　5，小接口，</text>
+            </sentence>
+            <sentence id="2:27">
+                <text>非常喜欢。</text>
+            </sentence>
+            <sentence id="2:28">
+                <text>因为我的周边不多，</text>
+            </sentence>
+            <sentence id="2:29">
+                <text>所以几乎不影响。</text>
+            </sentence>
+            <sentence id="2:30">
+                <text>小接口没有正反面，</text>
+            </sentence>
+            <sentence id="2:31">
+                <text>而且插入的那个感觉还是不错的。</text>
+            </sentence>
+            <sentence id="2:32">
+                <text>　　6，电池，</text>
+            </sentence>
+            <sentence id="2:33">
+                <text>1天1充，</text>
+            </sentence>
+            <sentence id="2:34">
+                <text>这个貌似没什么可抱怨的。</text>
+            </sentence>
+            <sentence id="2:35">
+                <text>充电速度很满意，</text>
+                <Opinions>
+                    <Opinion category="POWER_SUPPLY#QUALITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="2:36">
+                <text>另外我有移动电源，</text>
+            </sentence>
+            <sentence id="2:37">
+                <text>随时用随时充就可以了。</text>
+            </sentence>
+            <sentence id="2:38">
+                <text>　　7，掉漆问题，</text>
+            </sentence>
+            <sentence id="2:39">
+                <text>白色的不明显，</text>
+            </sentence>
+            <sentence id="2:40">
+                <text>我自己还没发现。</text>
+            </sentence>
+            <sentence id="2:41">
+                <text>用的时候略微注意点就好，</text>
+            </sentence>
+            <sentence id="2:42">
+                <text>至于半年之后可能掉不掉也不关心了。</text>
+            </sentence>
+            <sentence id="2:43">
+                <text>手机是买来用的，</text>
+            </sentence>
+            <sentence id="2:44">
+                <text>不是收藏品。</text>
+            </sentence>
+            <sentence id="2:45">
+                <text>　　8，网上反馈的那些问题，</text>
+            </sentence>
+            <sentence id="2:46">
+                <text>我这里就偶尔出现花屏现象，</text>
+            </sentence>
+            <sentence id="2:47">
+                <text>尤其在App Store调用输入法时，</text>
+            </sentence>
+            <sentence id="2:48">
+                <text>貌似iOS6的问题，</text>
+            </sentence>
+            <sentence id="2:49">
+                <text>等待更新吧。</text>
+            </sentence>
+            <sentence id="2:50">
+                <text>其他的均没有发现，</text>
+            </sentence>
+            <sentence id="2:51">
+                <text>应该是极小概率事件了。</text>
+            </sentence>
+            <sentence id="2:52">
+                <text>　　9，App应用仍然很给力，</text>
+                <Opinions>
+                    <Opinion category="SOFTWARE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="2:53">
+                <text>从一个App是否立刻更新支持iPhone5，</text>
+            </sentence>
+            <sentence id="2:54">
+                <text>能看出一定的态度。</text>
+            </sentence>
+            <sentence id="2:55">
+                <text>当然，</text>
+            </sentence>
+            <sentence id="2:56">
+                <text>iPhone5还是小众，</text>
+            </sentence>
+            <sentence id="2:57">
+                <text>可以不在乎，</text>
+            </sentence>
+            <sentence id="2:58">
+                <text>呵呵。</text>
+            </sentence>
+            <sentence id="2:59">
+                <text>　　10，耳机，</text>
+            </sentence>
+            <sentence id="2:60">
+                <text>效果不错，</text>
+            </sentence>
+            <sentence id="2:61">
+                <text>放在耳朵里的感觉也比较舒服，</text>
+            </sentence>
+            <sentence id="2:62">
+                <text>长时间佩戴无痛感。</text>
+            </sentence>
+        </sentences>
+    </Review>
+    <Review rid="3">
+        <sentences>
+            <sentence id="3:0">
+                <text>苹果iPhone5新机到手 对比4S使用感受</text>
+            </sentence>
+            <sentence id="3:1">
+                <text>1，外观。</text>
+            </sentence>
+            <sentence id="3:2">
+                <text>一开始看发布会和网上照片，</text>
+            </sentence>
+            <sentence id="3:3">
+                <text>我和大多数人观点一样：</text>
+            </sentence>
+            <sentence id="3:4">
+                <text>变化不大，</text>
+            </sentence>
+            <sentence id="3:5">
+                <text>有点小失望。</text>
+            </sentence>
+            <sentence id="3:6">
+                <text>但是真的把5和4s放在一起，</text>
+            </sentence>
+            <sentence id="3:7">
+                <text>就可以发现5还是好看不少。</text>
+            </sentence>
+            <sentence id="3:8">
+                <text>金属背壳非常有质感，</text>
+                <Opinions>
+                    <Opinion category="HARDWARE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:9">
+                <text>加上精良的工艺，</text>
+                <Opinions>
+                    <Opinion category="PHONE#QUALITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:10">
+                <text>真的非常耐看。</text>
+            </sentence>
+            <sentence id="3:11">
+                <text>2，手感。 </text>
+            </sentence>
+            <sentence id="3:12">
+                <text>没错，</text>
+            </sentence>
+            <sentence id="3:13">
+                <text>这就是我想要的手感，</text>
+                <Opinions>
+                    <Opinion category="PHONE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:14">
+                <text>轻薄又不失稳重，</text>
+            </sentence>
+            <sentence id="3:15">
+                <text>长度对我完全ok，</text>
+            </sentence>
+            <sentence id="3:16">
+                <text>而且手握的时候刚好，</text>
+            </sentence>
+            <sentence id="3:17">
+                <text>很有安全感，</text>
+            </sentence>
+            <sentence id="3:18">
+                <text>回头看反而4s有点握不住要掉的感觉。</text>
+            </sentence>
+            <sentence id="3:19">
+                <text>打字的时候食指刚好能按到上沿的锁屏键（手小的mm恐怕做不到）至于侧键和4s一样，</text>
+            </sentence>
+            <sentence id="3:20">
+                <text>位置恰到好处。</text>
+            </sentence>
+            <sentence id="3:21">
+                <text>装在兜里也十分完美。</text>
+            </sentence>
+            <sentence id="3:22">
+                <text>也是这些原因让我果断选择了果奔。</text>
+            </sentence>
+            <sentence id="3:23">
+                <text>3，体验，</text>
+                <Opinions>
+                    <Opinion category="OS#OPERATION_PERFORMANCE" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:24">
+                <text>一如既往的好，</text>
+            </sentence>
+            <sentence id="3:25">
+                <text>在运行大程序比如无尽之剑，</text>
+            </sentence>
+            <sentence id="3:26">
+                <text>3d地图的时候比4s有非常明显的优势，</text>
+                <Opinions>
+                    <Opinion category="SOFTWARE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:27">
+                <text>所以性能的提升绝对不是纸面数据而已。</text>
+                <Opinions>
+                    <Opinion category="PHONE#OPERATION_PERFORMANCE" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:28">
+                <text>4，ios6，</text>
+            </sentence>
+            <sentence id="3:29">
+                <text>相信很多人都升级了，</text>
+            </sentence>
+            <sentence id="3:30">
+                <text>所以不多说。</text>
+            </sentence>
+            <sentence id="3:31">
+                <text>简单讲siri虽然有时不那么灵，</text>
+                <Opinions>
+                    <Opinion category="SOFTWARE#OPERATION_PERFORMANCE" polarity="negative"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:32">
+                <text>也是很实用的功能。</text>
+                <Opinions>
+                    <Opinion category="PHONE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:33">
+                <text>尤其是开车的时候，</text>
+            </sentence>
+            <sentence id="3:34">
+                <text>作用不小。</text>
+            </sentence>
+            <sentence id="3:35">
+                <text>防打扰模式很实用，</text>
+                <Opinions>
+                    <Opinion category="OS#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:36">
+                <text>照片分享也给力很多。</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:37">
+                <text>地图也经常被吐槽，</text>
+                <Opinions>
+                    <Opinion category="SOFTWARE#DESIGN_FEATURES" polarity="negative"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:39">
+                <text>导航延迟有点大，</text>
+                <Opinions>
+                    <Opinion category="SOFTWARE#OPERATION_PERFORMANCE" polarity="negative"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:40">
+                <text>总之只能作为辅助工具。</text>
+            </sentence>
+            <sentence id="3:41">
+                <text>5，网络，</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#CONNECTIVITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:42">
+                <text>lte确实很快，</text>
+            </sentence>
+            <sentence id="3:43">
+                <text>信号满格的时候简直像是从硬盘里开东西。</text>
+            </sentence>
+            <sentence id="3:44">
+                <text>只是用起来发热有点厉害，</text>
+                <Opinions>
+                    <Opinion category="PHONE#OPERATION_PERFORMANCE" polarity="negative"/>
+                </Opinions>
+            </sentence>
+            <sentence id="3:45">
+                <text>不敢多用，</text>
+            </sentence>
+            <sentence id="3:46">
+                <text>怕伤机器。</text>
+            </sentence>
+            <sentence id="3:47">
+                <text>之前有人说iphone5跑流量厉害，</text>
+            </sentence>
+            <sentence id="3:48">
+                <text>自己用没发现，</text>
+            </sentence>
+            <sentence id="3:49">
+                <text>平时有wifi都是自动走wifi，</text>
+            </sentence>
+            <sentence id="3:50">
+                <text>一点不用担心。</text>
+            </sentence>
+            <sentence id="3:51">
+                <text>感觉一个月300mb应付一下出门足够了。</text>
+            </sentence>
+            <sentence id="3:52">
+                <text>就这些把吧，</text>
+            </sentence>
+            <sentence id="3:53">
+                <text>大家有问题可以一起讨论下。</text>
+            </sentence>
+            <sentence id="3:54">
+                <text>我不是果粉，</text>
+            </sentence>
+            <sentence id="3:55">
+                <text>但是也用了不少苹果的东西，</text>
+            </sentence>
+            <sentence id="3:56">
+                <text>感觉iphone5绝对够出色，</text>
+            </sentence>
+            <sentence id="3:57">
+                <text>只是不要把苹果当成神。</text>
+            </sentence>
+            <sentence id="3:58">
+                <text>理性地想一想，</text>
+            </sentence>
+            <sentence id="3:59">
+                <text>现在手机有几款能比iphone更能满足我们对手机的需求呢？</text>
+            </sentence>
+        </sentences>
+    </Review>
+    <Review rid="4">
+        <sentences>
+            <sentence id="4:0">
+                <text>iPhone5半天的感受：</text>
+            </sentence>
+            <sentence id="4:1">
+                <text>屏幕惊艳，</text>
+                <Opinions>
+                    <Opinion category="DISPLAY#QUALITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:2">
+                <text>拍照效果完美</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:3">
+                <text> 入手感觉很精巧，</text>
+                <Opinions>
+                    <Opinion category="PHONE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:4">
+                <text>因为很轻，</text>
+            </sentence>
+            <sentence id="4:5">
+                <text>也很薄。</text>
+            </sentence>
+            <sentence id="4:6">
+                <text>刚开始会不习惯，</text>
+            </sentence>
+            <sentence id="4:7">
+                <text>过一会就感觉很好了，</text>
+            </sentence>
+            <sentence id="4:8">
+                <text>我手里的是一个黑色版，</text>
+            </sentence>
+            <sentence id="4:9">
+                <text>拿在手里听音乐的时候，</text>
+            </sentence>
+            <sentence id="4:10">
+                <text>感觉像个从太空来的装置。</text>
+            </sentence>
+            <sentence id="4:11">
+                <text>结论当然是值得买，</text>
+            </sentence>
+            <sentence id="4:12">
+                <text>用苹果手机的感受确实不是其他手机能比的</text>
+            </sentence>
+            <sentence id="4:13">
+                <text>      电池没问题，</text>
+                <Opinions>
+                    <Opinion category="BATTERY#QUALITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:14">
+                <text>感觉应该是4S略长点，</text>
+            </sentence>
+            <sentence id="4:15">
+                <text>用了一天，</text>
+            </sentence>
+            <sentence id="4:16">
+                <text>下载上网电话短信各种操作，</text>
+            </sentence>
+            <sentence id="4:17">
+                <text>到晚上还有30%的电。</text>
+            </sentence>
+            <sentence id="4:18">
+                <text>      做工很好，</text>
+                <Opinions>
+                    <Opinion category="PHONE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:19">
+                <text>不能拆的机身让手机看上去毫无破绽，</text>
+            </sentence>
+            <sentence id="4:20">
+                <text>机身长出了一截，</text>
+            </sentence>
+            <sentence id="4:21">
+                <text>但是宽度没有增加，</text>
+            </sentence>
+            <sentence id="4:22">
+                <text>所以看上去会细长一些，</text>
+            </sentence>
+            <sentence id="4:23">
+                <text>这个得看个人喜欢不喜欢了，</text>
+            </sentence>
+            <sentence id="4:24">
+                <text>估计女孩子会更开心。</text>
+            </sentence>
+            <sentence id="4:25">
+                <text>每个细节都很出色，</text>
+                <Opinions>
+                    <Opinion category="PHONE#GENERAL" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:26">
+                <text>这让我想起互联网设计师们经常说的一句话，</text>
+            </sentence>
+            <sentence id="4:27">
+                <text>这是像素级的设计。</text>
+                <Opinions>
+                    <Opinion category="PHONE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:28">
+                <text>      屏幕好，</text>
+                <Opinions>
+                    <Opinion category="DISPLAY#QUALITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:29">
+                <text>不过因为之前一直在用news pad，</text>
+            </sentence>
+            <sentence id="4:30">
+                <text>倒也没有觉得很赞，</text>
+            </sentence>
+            <sentence id="4:31">
+                <text>认真看看，</text>
+            </sentence>
+            <sentence id="4:32">
+                <text>可以看到每个汉字都很精细，</text>
+            </sentence>
+            <sentence id="4:33">
+                <text>像浮在屏幕上一样。</text>
+            </sentence>
+            <sentence id="4:34">
+                <text>用过iPhone5，</text>
+            </sentence>
+            <sentence id="4:35">
+                <text>再用我其他的手机，</text>
+            </sentence>
+            <sentence id="4:36">
+                <text>看着屏幕会有点别扭。</text>
+            </sentence>
+            <sentence id="4:37">
+                <text>      那个拍照实在是太好了，</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:38">
+                <text>好得让人无话可说了，</text>
+            </sentence>
+            <sentence id="4:39">
+                <text>之前很多人说三星的galaxy s3拍得好，</text>
+            </sentence>
+            <sentence id="4:40">
+                <text>跟这个一比，</text>
+            </sentence>
+            <sentence id="4:41">
+                <text>就显得有点山寨。</text>
+            </sentence>
+            <sentence id="4:42">
+                <text>到底好到什么程度，</text>
+            </sentence>
+            <sentence id="4:43">
+                <text>只有亲身体会才能知道了。</text>
+            </sentence>
+            <sentence id="4:44">
+                <text>      新的接口小巧得多了，</text>
+                <Opinions>
+                    <Opinion category="PORTS#CONNECTIVITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:45">
+                <text>有点接近一个小USB接口，</text>
+            </sentence>
+            <sentence id="4:46">
+                <text>肯定是比之前那个大扁口看着舒服，</text>
+            </sentence>
+            <sentence id="4:47">
+                <text>也难怪苹果决心改掉。</text>
+            </sentence>
+            <sentence id="4:48">
+                <text>      音响是最让人惊讶的，</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:49">
+                <text>那个新耳机，</text>
+                <Opinions>
+                    <Opinion category="HARDWARE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:50">
+                <text>要说起来应该算是入耳式的，</text>
+            </sentence>
+            <sentence id="4:51">
+                <text>之前我特别不喜欢各种入耳式的耳机，</text>
+            </sentence>
+            <sentence id="4:52">
+                <text>但是这个毫无压力，</text>
+            </sentence>
+            <sentence id="4:53">
+                <text>设计得很好，</text>
+            </sentence>
+            <sentence id="4:54">
+                <text>塞在耳朵里没有一点不舒服的感觉。</text>
+            </sentence>
+            <sentence id="4:55">
+                <text>用iphone5配上这个耳机听音乐，</text>
+            </sentence>
+            <sentence id="4:56">
+                <text>真的是享受，</text>
+            </sentence>
+            <sentence id="4:57">
+                <text>说起来音乐是比视频更强大的移动应用，</text>
+            </sentence>
+            <sentence id="4:58">
+                <text>至少目前看是这样。</text>
+            </sentence>
+            <sentence id="4:59">
+                <text>      当然屏幕这么好，</text>
+                <Opinions>
+                    <Opinion category="DISPLAY#QUALITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:60">
+                <text>iphone5看视频很棒了，</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#OPERATION_PERFORMANCE" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:61">
+                <text>我用迅雷看看导进去一集生活大爆炸，</text>
+            </sentence>
+            <sentence id="4:62">
+                <text>屏幕两边是留的有黑边，</text>
+            </sentence>
+            <sentence id="4:63">
+                <text>不过大概是因为黑色版本，</text>
+            </sentence>
+            <sentence id="4:64">
+                <text>所以也看不出来，</text>
+            </sentence>
+            <sentence id="4:65">
+                <text>画面很炫。</text>
+                <Opinions>
+                    <Opinion category="DISPLAY#QUALITY" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:66">
+                <text>      系统操作没什么可说的，</text>
+                <Opinions>
+                    <Opinion category="OS#OPERATION_PERFORMANCE" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:67">
+                <text>苹果一向的流畅，</text>
+            </sentence>
+            <sentence id="4:68">
+                <text>触摸仍然是无人可及，</text>
+                <Opinions>
+                    <Opinion category="DISPLAY#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:69">
+                <text>不过尝试着用浏览器加载网络视频时，</text>
+            </sentence>
+            <sentence id="4:70">
+                <text>如果是太高清的视频，</text>
+            </sentence>
+            <sentence id="4:71">
+                <text>会出现一时无法响应的情况，</text>
+            </sentence>
+            <sentence id="4:72">
+                <text>按掉回到主屏幕，</text>
+            </sentence>
+            <sentence id="4:73">
+                <text>再回到浏览器下还是没有反应，</text>
+            </sentence>
+            <sentence id="4:74">
+                <text>这个以前没有碰到过。</text>
+            </sentence>
+            <sentence id="4:75">
+                <text>      说说软件，</text>
+            </sentence>
+            <sentence id="4:76">
+                <text>苹果的软件实在是太多太好，</text>
+                <Opinions>
+                    <Opinion category="SOFTWARE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:77">
+                <text>很多软件都有安卓版和ios版，</text>
+            </sentence>
+            <sentence id="4:78">
+                <text>相比之下，</text>
+            </sentence>
+            <sentence id="4:79">
+                <text>无论是界面设计还是交互，</text>
+                <Opinions>
+                    <Opinion category="OS#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:80">
+                <text>无论是界面设计还是交互，</text>
+                <Opinions>
+                    <Opinion category="OS#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:81">
+                <text>ios的版本都要强得多，</text>
+            </sentence>
+            <sentence id="4:82">
+                <text>尤其是界面设计，</text>
+            </sentence>
+            <sentence id="4:83">
+                <text>难道安卓的设计师们也自认是吊丝设计师吗，</text>
+            </sentence>
+            <sentence id="4:84">
+                <text>这真是让人想不通啊。</text>
+            </sentence>
+            <sentence id="4:85">
+                <text>      最后siri，</text>
+                <Opinions>
+                    <Opinion category="SOFTWARE#DESIGN_FEATURES" polarity="positive"/>
+                </Opinions>
+            </sentence>
+            <sentence id="4:86">
+                <text>这个识别率很高，</text>
+            </sentence>
+            <sentence id="4:87">
+                <text>我用河南普通话发问，</text>
+            </sentence>
+            <sentence id="4:88">
+                <text>也识别出来了，</text>
+            </sentence>
+            <sentence id="4:89">
+                <text>好吧，</text>
+            </sentence>
+            <sentence id="4:90">
+                <text>我佩服你。</text>
+            </sentence>
+        </sentences>
+    </Review>
+    <Review rid="5">
+        <sentences>
+            <sentence id="5:0">
+                <text>霸道、大气中独有的精典iphone5</text>
+            </sentence>
+            <sentence id="5:1">
+                <text>苹果iPhone5上市以来已经过去1个多月了，</text>
+            </sentence>
+            <sentence id="5:2">
+                <text>iPhone的热潮依然不减，</text>
+            </sentence>
+            <sentence id="5:3">
+                <text>而且还有明显的升温，</text>
+            </sentence>
+            <sentence id="5:4">
+                <text>iPhone 5的售价从6800元回升至8000元左右，</text>
+            </sentence>
+            <sentence id="5:5">
+                <text>经过一段时期的逆袭后，</text>
+            </sentence>
+            <sentence id="5:6">
+                <text>过去一周，</text>
+            </sentence>
+            <sentence id="5:7">
+                <text>苹果延续大暴跌，</text>
+            </sentence>
+            <sentence id="5:8">
+                <text>现iPhone5最新报价有相当大的跌幅，</text>
+            </sentence>
+            <sentence id="5:9">
+                <text>喜欢的朋友不妨继续观望</text>
+            </sentence>
+            <sentence id="5:10">
+                <text>个人认为这个网上的it产品的性价比不错在线友情提示: </text>
+            </sentence>
+            <sentence id="5:11">
+                <text>这款机子确实很不错！</text>
+            </sentence>
+        </sentences>
+    </Review>
+    <Review rid="6">
+        <sentences>
+            <sentence id="6:0">
+                <text> 一星期我已经买了两台K860i了，</text>
+            </sentence>
+            <sentence id="6:1">
+                <text>一白一黑。</text>
+            </sentence>
+            <sentence id="6:2">
+                <text>之前准备买小米的，</text>
+            </sentence>
+            <sentence id="6:3">
+                <text>太讨厌抢购了，</text>
+            </sentence>
+            <sentence id="6:4">
+                <text>转投大K。</text>
+            </sentence>
+            <sentence id="6:5">
+                <text>一周使用下来，</text>
+            </sentence>
+            <sentence id="6:6">
+                <text>没发现电话回音的问题（当然就算是有也已经做好准备自己搞定了），</text>
+            </sentence>
+            <sentence id="6:7">
+                <text>其他都很正常，</text>
+            </sentence>
+            <sentence id="6:8">
+                <text>大K确实是很不错的一款4核强机，</text>
+            </sentence>
+            <sentence id="6:9">
+                <text>如果联想在宣传和培养用户群方面做得更好一点，</text>
+            </sentence>
+            <sentence id="6:10">
+                <text>一定不会输给小米。</text>
+            </sentence>
+            <sentence id="6:11">
+                <text>        为了联想以后做得更好，</text>
+            </sentence>
+            <sentence id="6:12">
+                <text>我还是要说点大K的不足之处。</text>
+            </sentence>
+            <sentence id="6:13">
+                <text>当然听不听在联想，</text>
+            </sentence>
+            <sentence id="6:14">
+                <text>说不说在我。</text>
+            </sentence>
+            <sentence id="6:15">
+                <text>        1.这款手机设计上最大的败笔就是摄像头，</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#DESIGN_FEATURES" polarity="negative"/>
+                </Opinions>
+            </sentence>
+            <sentence id="6:16">
+                <text>且不说其他网友说的突出出来的问题，</text>
+            </sentence>
+            <sentence id="6:17">
+                <text>就是摄像头的位置，</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#DESIGN_FEATURES" polarity="negative"/>
+                </Opinions>
+            </sentence>
+            <sentence id="6:18">
+                <text>显然就没经过仔细考虑。</text>
+            </sentence>
+            <sentence id="6:19">
+                <text>大K 在照相时肯定要两手操作的，</text>
+            </sentence>
+            <sentence id="6:20">
+                <text>摄像头的位置让左手很容易捏到，</text>
+            </sentence>
+            <sentence id="6:21">
+                <text>让镜头变花，</text>
+            </sentence>
+            <sentence id="6:22">
+                <text>或照相的时候左手手指很容易遮挡镜头，</text>
+            </sentence>
+            <sentence id="6:23">
+                <text>你就算是兰花指翘到天上去，</text>
+            </sentence>
+            <sentence id="6:24">
+                <text>还是很容易挡到。</text>
+            </sentence>
+            <sentence id="6:25">
+                <text>        2.说明书没说明，</text>
+                <Opinions>
+                    <Opinion category="SUPPORT#USABILITY" polarity="negative"/>
+                </Opinions>
+            </sentence>
+            <sentence id="6:26">
+                <text>功能菜单设置又不是很合理，</text>
+                <Opinions>
+                    <Opinion category="SOFTWARE#DESIGN_FEATURES" polarity="negative"/>
+                </Opinions>
+            </sentence>
+            <sentence id="6:27">
+                <text>所以刚拿到大K时，</text>
+            </sentence>
+            <sentence id="6:28">
+                <text>为了某个功能要摸索很长时间。</text>
+            </sentence>
+            <sentence id="6:29">
+                <text>①文件的复制、剪切、删除、传送功能是使用频率非常高的功能，</text>
+            </sentence>
+            <sentence id="6:30">
+                <text>大K却把这些功能设置在次级菜单里，</text>
+            </sentence>
+            <sentence id="6:31">
+                <text>找出这些功能费了不少时间，</text>
+            </sentence>
+            <sentence id="6:32">
+                <text>以后操作应该不是很方便；</text>
+                <Opinions>
+                    <Opinion category="PHONE#OPERATION_PERFORMANCE" polarity="negative"/>
+                </Opinions>
+            </sentence>
+            <sentence id="6:33">
+                <text>②照相机的连拍功能，</text>
+                <Opinions>
+                    <Opinion category="MULTIMEDIA_DEVICES#DESIGN_FEATURES" polarity="negative"/>
+                </Opinions>
+            </sentence>
+            <sentence id="6:34">
+                <text>找了几天都没找到，</text>
+            </sentence>
+            <sentence id="6:35">
+                <text>以为没有，</text>
+            </sentence>
+            <sentence id="6:36">
+                <text>准备咨询售后，</text>
+            </sentence>
+            <sentence id="6:37">
+                <text>最后在一个次级菜单里找到了教程，</text>
+            </sentence>
+            <sentence id="6:38">
+                <text>看了教程才知道怎么操作。</text>
+            </sentence>
+            <sentence id="6:39">
+                <text>        希望联想越做越好，</text>
+            </sentence>
+            <sentence id="6:40">
+                <text>让我们这些支持国货的机油有个伸腰的机会。</text>
+            </sentence>
+            <sentence id="6:41">
+                <text>        你们的K860i相机镜头经常会是这样的吗？</text>
+            </sentence>
+        </sentences>
+    </Review>
+    <Review rid="7">
+        <sentences>
+            <sentence id="7:0">
+                <text>关注索尼L36h很久，</text>
+            </sentence>
+            <sentence id="7:1">
+                <text>3月初第一批国行到货，</text>
+            </sentence>
+            <sentence id="7:2">
+                <text>果断入手。</text>
+            </sentence>
+            <sentence id="7:3">
+                <text>4999元送MW600蓝牙。</text>
+            </sentence>
+            <sentence id="7:4">
+                <text>   图片不晒了，</text>
+            </sentence>
+            <sentence id="7:5">
+                <text>到处倒是，</text>
+            </sentence>
+        </sentences>
+    </Review>
+</Reviews>
