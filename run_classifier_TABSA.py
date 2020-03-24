@@ -25,7 +25,8 @@ from processor import (Semeval_NLI_B_Processor, Semeval_NLI_M_Processor,
                        Semeval_QA_B_Processor, Semeval_QA_M_Processor,
                        Semeval_single_Processor, Sentihood_NLI_B_Processor,
                        Sentihood_NLI_M_Processor, Sentihood_QA_B_Processor,
-                       Sentihood_QA_M_Processor, Sentihood_single_Processor)
+                       Sentihood_QA_M_Processor, Sentihood_single_Processor,
+                       Semeval16_NLI_M_Processor)
 
 logging.basicConfig(format = '%(asctime)s - %(levelname)s - %(name)s -   %(message)s', 
                     datefmt = '%m/%d/%Y %H:%M:%S',
@@ -157,7 +158,8 @@ def main():
                         required=True,
                         choices=["sentihood_single", "sentihood_NLI_M", "sentihood_QA_M", \
                                 "sentihood_NLI_B", "sentihood_QA_B", "semeval_single", \
-                                "semeval_NLI_M", "semeval_QA_M", "semeval_NLI_B", "semeval_QA_B"],
+                                "semeval_NLI_M", "semeval_QA_M", "semeval_NLI_B", "semeval_QA_B", \
+                                "semeval16_NLI_M"],
                         help="The name of the task to train.")
     parser.add_argument("--data_dir",
                         default=None,
@@ -291,6 +293,7 @@ def main():
         "semeval_QA_M":Semeval_QA_M_Processor,
         "semeval_NLI_B":Semeval_NLI_B_Processor,
         "semeval_QA_B":Semeval_QA_B_Processor,
+        "semeval16_NLI_M":Semeval16_NLI_M_Processor
     }
 
     processor = processors[args.task_name]()
