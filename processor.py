@@ -476,9 +476,9 @@ class Semeval_QA_B_Processor(DataProcessor):
 class Semeval16_NLI_M_Processor(DataProcessor):
     """Processor for the Semeval 2016 data set."""
 
-    def get_train_examples(self, data_dir):
+    def get_train_examples(self, data_dir, file_name="train_NLI_M.csv"):
         """See base class."""
-        train_data = pd.read_csv(os.path.join(data_dir, "train_NLI_M.csv"),header=None,sep="\t").values
+        train_data = pd.read_csv(os.path.join(data_dir, file_name),header=None,sep="\t").values
         return self._create_examples(train_data, "train")
 
     def get_dev_examples(self, data_dir):
@@ -486,9 +486,9 @@ class Semeval16_NLI_M_Processor(DataProcessor):
         dev_data = pd.read_csv(os.path.join(data_dir, "dev_NLI_M.csv"),header=None,sep="\t").values
         return self._create_examples(dev_data, "dev")
 
-    def get_test_examples(self, data_dir):
+    def get_test_examples(self, data_dir, file_name="test_NLI_M.csv"):
         """See base class."""
-        test_data = pd.read_csv(os.path.join(data_dir, "test_NLI_M.csv"),header=None,sep="\t").values
+        test_data = pd.read_csv(os.path.join(data_dir, file_name),header=None,sep="\t").values
         return self._create_examples(test_data, "test")
 
     def get_labels(self):

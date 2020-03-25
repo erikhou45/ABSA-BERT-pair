@@ -243,7 +243,16 @@ def main():
     parser.add_argument('--gradient_accumulation_steps',
                         type=int,
                         default=1,
-                        help="Number of updates steps to accumualte before performing a backward/update pass.")                       
+                        help="Number of updates steps to accumualte before performing a backward/update pass.")
+    # add two optional arguments to specify files used for training and testing
+    parser.add_argument("--train_file_name",
+                        default=None,
+                        type=str,
+                        help="Specific file for training")
+    parser.add_argument("--test_file_name",
+                        default=None,
+                        type=str,
+                        help="Specific file for testing")
     args = parser.parse_args()
 
 
@@ -305,7 +314,11 @@ def main():
     # training set
     train_examples = None
     num_train_steps = None
-    train_examples = processor.get_train_examples(args.data_dir)
+    # pass in the specific file name for training if it's specified
+    if args.train_file_name:
+        train_examples = processor.get_train_examples(args.data_dir, args.train_file_name)
+    else:
+        train_examples = processor.get_train_examples(args.data_dir)
     num_train_steps = int(
         len(train_examples) / args.train_batch_size * args.num_train_epochs)
 
@@ -330,7 +343,11 @@ def main():
 
     # test set
     if args.eval_test:
-        test_examples = processor.get_test_examples(args.data_dir)
+        # pass in the specific file name for testing if it's specified
+        if args.test_file_name:
+            test_examples = processor.get_test_examples(args.data_dir, args.test_file_name)
+        else:
+            test_examples = processor.get_test_examples(args.data_dir)
         test_features = convert_examples_to_features(
             test_examples, label_list, args.max_seq_length, tokenizer)
 
