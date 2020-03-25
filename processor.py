@@ -512,3 +512,52 @@ class Semeval16_NLI_M_Processor(DataProcessor):
             examples.append(
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
+
+class Semeval16_XLIN_Processor(DataProcessor):
+    """Processor for the Semeval 2016 data set."""
+    def __init__(self, task_name):
+        self.task_name = [15:]
+        
+    def get_train_examples(self, data_dir, file_name=None):
+        """See base class."""
+        if not file_name:
+            file_name = "EN_Laptop_Train_" + self.task_name + ".csv"
+        train_data = pd.read_csv(os.path.join(data_dir, file_name),header=None,sep="\t").values
+        return self._create_examples(train_data, "train")
+
+    def get_dev_examples(self, data_dir):
+        """See base class."""
+        dev_data = pd.read_csv(os.path.join(data_dir, "dev_NLI_M.csv"),header=None,sep="\t").values
+        return self._create_examples(dev_data, "dev")
+
+    def get_test_examples(self, data_dir, file_name=None):
+        """See base class."""
+        if not file_name:
+            file_name = "CH_Cell_Test_" + self.task_name + ".csv"
+        test_data = pd.read_csv(os.path.join(data_dir, file_name),header=None,sep="\t").values
+        return self._create_examples(test_data, "test")
+
+    def get_labels(self):
+        """See base class."""
+        if self.task_name[-1] == 'M':
+            return ['positive', 'neutral', 'negative', 'none']
+        else:
+            return ['0', '1']
+
+    def _create_examples(self, lines, set_type):
+        """Creates examples for the training and dev sets."""
+        examples = []
+        for (i, line) in enumerate(lines):
+          #  if i>50:break
+            guid = "%s-%s" % (set_type, i)
+            text_a = tokenization.convert_to_unicode(str(line[3]))
+            text_b = tokenization.convert_to_unicode(str(line[2]))
+            label = tokenization.convert_to_unicode(str(line[1]))
+            if i%1000==0:
+                print(i)
+                print("guid=",guid)
+                print("text_a=",text_a)
+                print("label=",label)
+            examples.append(
+                InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
+        return examples

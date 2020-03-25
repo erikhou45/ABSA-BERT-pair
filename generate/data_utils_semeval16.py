@@ -1,3 +1,6 @@
+import re
+import os
+
 def quantify_polarity(pol):
     if 'positive' in pol:
         return 1
@@ -14,6 +17,14 @@ def cal_polarity(polarities):
         return 'negative'
     else:
         return 'neutral'
+    
+def get_files(data_dir):
+    files = []
+    for file in os.listdir(data_dir):
+        m = re.match("^(EN_Laptop|CH_Cell).*\.xml",file)
+        if m:
+            files.append(m.group())
+    return files
 
 LAPTOP_TARGETS = [
     "LAPTOP", "DISPLAY", "CPU", "HARD_DISC", "MEMORY",

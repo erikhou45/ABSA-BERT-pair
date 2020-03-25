@@ -159,7 +159,8 @@ def main():
                         choices=["sentihood_single", "sentihood_NLI_M", "sentihood_QA_M", \
                                 "sentihood_NLI_B", "sentihood_QA_B", "semeval_single", \
                                 "semeval_NLI_M", "semeval_QA_M", "semeval_NLI_B", "semeval_QA_B", \
-                                "semeval16_NLI_M"],
+                                "semeval16_XLIN_NLI_M", "semeval16_XLIN_NLI_B", \ 
+                                "semeval16_XLIN_QA_M", "semeval16_XLIN_QA_B"],
                         help="The name of the task to train.")
     parser.add_argument("--data_dir",
                         default=None,
@@ -302,10 +303,16 @@ def main():
         "semeval_QA_M":Semeval_QA_M_Processor,
         "semeval_NLI_B":Semeval_NLI_B_Processor,
         "semeval_QA_B":Semeval_QA_B_Processor,
-        "semeval16_NLI_M":Semeval16_NLI_M_Processor
+        "semeval16_XLIN_NLI_M":Semeval16_XLIN_Processor,
+        "semeval16_XLIN_NLI_B"Semeval16_XLIN_Processor,
+        "semeval16_XLIN_QA_M":Semeval16_XLIN_Processor,
+        "semeval16_XLIN_QA_B":Semeval16_XLIN_Processor
     }
-
-    processor = processors[args.task_name]()
+    
+    if "semeval16_XLIN" not in args.task_name:
+        processor = processors[args.task_name]()
+    else:
+        processor = processors[args.task_name](args.task_name)
     label_list = processor.get_labels()
 
     tokenizer = tokenization.FullTokenizer(

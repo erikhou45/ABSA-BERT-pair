@@ -1,4 +1,3 @@
-import argparse
 import os
 from collections import defaultdict
 
@@ -10,19 +9,10 @@ dir_path = data_dir+'bert-pair/'
 if not os.path.exists(dir_path):
     os.makedirs(dir_path)
 
-
-parser = argparse.ArgumentParser()
-parser.add_argument("files", 
-                    metavar='FN', 
-                    type=str, 
-                    nargs='+',
-                    help="file(s) to process")
-args = parser.parse_args()
-
-file_names = args.files
+file_names = get_files(data_dir)
 
 for file_name in file_names:
-    with open(dir_path+"train_NLI_M.csv","w",encoding="utf-8") as g:
+    with open(dir_path+file_name[:-4]+"_NLI_M.csv","w",encoding="utf-8") as g:
         with open(data_dir+file_name,"r",encoding="utf-8") as f:
             s=f.readline().strip()   
             while s:
