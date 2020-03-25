@@ -26,7 +26,7 @@ from processor import (Semeval_NLI_B_Processor, Semeval_NLI_M_Processor,
                        Semeval_single_Processor, Sentihood_NLI_B_Processor,
                        Sentihood_NLI_M_Processor, Sentihood_QA_B_Processor,
                        Sentihood_QA_M_Processor, Sentihood_single_Processor,
-                       Semeval16_NLI_M_Processor)
+                       Semeval16_NLI_M_Processor, Semeval16_XLIN_Processor)
 
 logging.basicConfig(format = '%(asctime)s - %(levelname)s - %(name)s -   %(message)s', 
                     datefmt = '%m/%d/%Y %H:%M:%S',
@@ -156,10 +156,10 @@ def main():
                         default=None,
                         type=str,
                         required=True,
-                        choices=["sentihood_single", "sentihood_NLI_M", "sentihood_QA_M", \
-                                "sentihood_NLI_B", "sentihood_QA_B", "semeval_single", \
-                                "semeval_NLI_M", "semeval_QA_M", "semeval_NLI_B", "semeval_QA_B", \
-                                "semeval16_XLIN_NLI_M", "semeval16_XLIN_NLI_B", \ 
+                        choices=["sentihood_single", "sentihood_NLI_M", "sentihood_QA_M",
+                                "sentihood_NLI_B", "sentihood_QA_B", "semeval_single",
+                                "semeval_NLI_M", "semeval_QA_M", "semeval_NLI_B", "semeval_QA_B",
+                                "semeval16_XLIN_NLI_M", "semeval16_XLIN_NLI_B",
                                 "semeval16_XLIN_QA_M", "semeval16_XLIN_QA_B"],
                         help="The name of the task to train.")
     parser.add_argument("--data_dir",
@@ -304,7 +304,7 @@ def main():
         "semeval_NLI_B":Semeval_NLI_B_Processor,
         "semeval_QA_B":Semeval_QA_B_Processor,
         "semeval16_XLIN_NLI_M":Semeval16_XLIN_Processor,
-        "semeval16_XLIN_NLI_B"Semeval16_XLIN_Processor,
+        "semeval16_XLIN_NLI_B":Semeval16_XLIN_Processor,
         "semeval16_XLIN_QA_M":Semeval16_XLIN_Processor,
         "semeval16_XLIN_QA_B":Semeval16_XLIN_Processor
     }
