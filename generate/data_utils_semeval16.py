@@ -18,10 +18,10 @@ def cal_polarity(polarities):
     else:
         return 'neutral'
     
-def get_files(data_dir):
+def get_files(data_dir, data_type="xml"):
     files = []
     for file in os.listdir(data_dir):
-        m = re.match("^(EN_Laptop|CH_Cell).*\.xml",file)
+        m = re.match("^(EN_Laptop|CH_Cell).*\."+data_type,file)
         if m:
             files.append(m.group())
     return files
