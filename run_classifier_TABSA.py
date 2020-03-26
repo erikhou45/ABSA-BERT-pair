@@ -407,7 +407,7 @@ def main():
         model.train()
         tr_loss = 0
         nb_tr_examples, nb_tr_steps = 0, 0
-        for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
+        for step, batch in enumerate(tqdm(train_dataloader, desc="Train Iteration")):
             batch = tuple(t.to(device) for t in batch)
             input_ids, input_mask, segment_ids, label_ids = batch
             loss, _ = model(input_ids, segment_ids, input_mask, label_ids)
@@ -430,7 +430,8 @@ def main():
             test_loss, test_accuracy = 0, 0
             nb_test_steps, nb_test_examples = 0, 0
             with open(os.path.join(args.output_dir, "test_ep_"+str(epoch)+".txt"),"w") as f_test:
-                for input_ids, input_mask, segment_ids, label_ids in test_dataloader:
+                for batch in tqdm(test_dataloader, desc="Test Iteration"):
+                    input_ids, input_mask, segment_ids, label_ids = batch
                     input_ids = input_ids.to(device)
                     input_mask = input_mask.to(device)
                     segment_ids = segment_ids.to(device)
