@@ -541,7 +541,7 @@ class Semeval16_XLIN_Processor(DataProcessor):
     def get_test_examples(self, data_dir, file_name=None):
         """See base class."""
         if not file_name:
-            file_name = "CH_Cell_Test_" + self.task_name + ".csv"
+            file_name = "CH_Cell_Test_Gold_" + self.task_name + ".csv"
         self.logger.info("Testing file name: %s", file_name)
         self.logger.info("***** Processing testing file *****")
         test_data = pd.read_csv(os.path.join(data_dir, file_name),header=None,sep="\t").values
