@@ -254,6 +254,10 @@ def main():
                         default=None,
                         type=str,
                         help="Specific file for testing")
+    parser.add_argument("--verbose",
+                        default=False,
+                        action='store_true',
+                        help="Whether to display the examples of text processed")
     args = parser.parse_args()
 
 
@@ -312,7 +316,7 @@ def main():
     if "semeval16_XLIN" not in args.task_name:
         processor = processors[args.task_name]()
     else:
-        processor = processors[args.task_name](args.task_name)
+        processor = processors[args.task_name](args.task_name, args.verbose)
     label_list = processor.get_labels()
 
     tokenizer = tokenization.FullTokenizer(
@@ -331,10 +335,6 @@ def main():
 
     train_features = convert_examples_to_features(
         train_examples, label_list, args.max_seq_length, tokenizer)
-    logger.info("***** Running training *****")
-    logger.info("  Num examples = %d", len(train_examples))
-    logger.info("  Batch size = %d", args.train_batch_size)
-    logger.info("  Num steps = %d", num_train_steps)
 
     all_input_ids = torch.tensor([f.input_ids for f in train_features], dtype=torch.long)
     all_input_mask = torch.tensor([f.input_mask for f in train_features], dtype=torch.long)
@@ -365,7 +365,11 @@ def main():
 
         test_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label_ids)
         test_dataloader = DataLoader(test_data, batch_size=args.eval_batch_size, shuffle=False)
-
+    
+    logger.info("***** Running training *****")
+    logger.info("  Num examples = %d", len(train_examples))
+    logger.info("  Batch size = %d", args.train_batch_size)
+    logger.info("  Num steps = %d", num_train_steps)
 
     # model and optimizer
     model = BertForSequenceClassification(bert_config, len(label_list))

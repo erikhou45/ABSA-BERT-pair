@@ -516,18 +516,20 @@ class Semeval16_NLI_M_Processor(DataProcessor):
 
 class Semeval16_XLIN_Processor(DataProcessor):
     """Processor for the Semeval 2016 data set."""
-    def __init__(self, task_name):
+    def __init__(self, task_name, verbose=False):
         self.task_name = task_name[15:]
         logging.basicConfig(format = '%(asctime)s - %(levelname)s - %(name)s -   %(message)s', 
         datefmt = '%m/%d/%Y %H:%M:%S',
         level = logging.INFO)
         self.logger = logging.getLogger(__name__)
+        self.verbose = verbose
         
     def get_train_examples(self, data_dir, file_name=None):
         """See base class."""
         if not file_name:
             file_name = "EN_Laptop_Train_" + self.task_name + ".csv"
-        self.logger.info("  Training file name: %s", file_name)
+        self.logger.info("Training file name: %s", file_name)
+        self.logger.info("***** Processing training file *****")
         train_data = pd.read_csv(os.path.join(data_dir, file_name),header=None,sep="\t").values
         return self._create_examples(train_data, "train")
 
@@ -540,7 +542,8 @@ class Semeval16_XLIN_Processor(DataProcessor):
         """See base class."""
         if not file_name:
             file_name = "CH_Cell_Test_" + self.task_name + ".csv"
-        self.logger.info("  Testing file name: %s", file_name)
+        self.logger.info("Testing file name: %s", file_name)
+        self.logger.info("***** Processing testing file *****")
         test_data = pd.read_csv(os.path.join(data_dir, file_name),header=None,sep="\t").values
         return self._create_examples(test_data, "test")
 
@@ -560,11 +563,12 @@ class Semeval16_XLIN_Processor(DataProcessor):
             text_a = tokenization.convert_to_unicode(str(line[3]))
             text_b = tokenization.convert_to_unicode(str(line[2]))
             label = tokenization.convert_to_unicode(str(line[1]))
-            if i%1000==0:
-                print(i)
-                print("guid=",guid)
-                print("text_a=",text_a)
-                print("label=",label)
+            if self.verbose:
+                if i%1000==0:
+                    print(i)
+                    print("guid=",guid)
+                    print("text_a=",text_a)
+                    print("label=",label)
             examples.append(
                 InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         return examples
