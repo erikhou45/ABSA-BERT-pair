@@ -258,6 +258,10 @@ def main():
                         default=False,
                         action='store_true',
                         help="Whether to display the examples of text processed")
+    parser.add_argument("--save_model",
+                        default=False,
+                        action='store_true',
+                        help="Whether to write the model checkpoints to disk")
     args = parser.parse_args()
 
 
@@ -483,6 +487,9 @@ def main():
                 logger.info("  %s = %s\n", key, str(result[key]))
                 writer.write("%s\t" % (str(result[key])))
             writer.write("\n")
+
+        if args.save_model:
+            torch.save(model.state_dict(), os.path.join(args.output_dir,f"epoch_{epoch}_model.bin"))
 
 if __name__ == "__main__":
     main()
