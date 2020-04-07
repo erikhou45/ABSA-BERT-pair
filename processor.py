@@ -559,7 +559,10 @@ class Semeval16_XLIN_Processor(DataProcessor):
         examples = []
         for (i, line) in enumerate(lines):
           #  if i>50:break
-            guid = "%s-%s" % (set_type, i)
+            if set_type == "test":
+                guid = str(line[0])
+            else:
+                guid = "%s-%s" % (set_type, i)
             text_a = tokenization.convert_to_unicode(str(line[3]))
             text_b = tokenization.convert_to_unicode(str(line[2]))
             label = tokenization.convert_to_unicode(str(line[1]))

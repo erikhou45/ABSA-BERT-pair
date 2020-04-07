@@ -37,11 +37,12 @@ logger = logging.getLogger(__name__)
 class InputFeatures(object):
     """A single set of features of data."""
 
-    def __init__(self, input_ids, input_mask, segment_ids, label_id):
+    def __init__(self, input_ids, input_mask, segment_ids, label_id, example_id):
         self.input_ids = input_ids
         self.input_mask = input_mask
         self.segment_ids = segment_ids
         self.label_id = label_id
+        self.example_id = example_id
 
 
 def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer):
@@ -127,7 +128,8 @@ def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer
                         input_ids=input_ids,
                         input_mask=input_mask,
                         segment_ids=segment_ids,
-                        label_id=label_id))
+                        label_id=label_id,
+                        example_id=example.guid))
     return features
 
 
@@ -439,11 +441,12 @@ def main():
             nb_test_steps, nb_test_examples = 0, 0
             with open(os.path.join(args.output_dir, "test_ep_"+str(epoch)+".txt"),"w") as f_test:
                 for batch in tqdm(test_dataloader, desc="Test Iteration"):
-                    input_ids, input_mask, segment_ids, label_ids = batch
+                    input_ids, input_mask, segment_ids, label_ids, example_ids = batch
                     input_ids = input_ids.to(device)
                     input_mask = input_mask.to(device)
                     segment_ids = segment_ids.to(device)
                     label_ids = label_ids.to(device)
+                    example_ids = example_ids.to(device)
 
                     with torch.no_grad():
                         tmp_test_loss, logits = model(input_ids, segment_ids, input_mask, label_ids)
@@ -451,8 +454,10 @@ def main():
                     logits = F.softmax(logits, dim=-1)
                     logits = logits.detach().cpu().numpy()
                     label_ids = label_ids.to('cpu').numpy()
+                    example_ids = example_ids.('cpu').tolist()
                     outputs = np.argmax(logits, axis=1)
                     for output_i in range(len(outputs)):
+                        f_test.write(example_ids[output_i] + " ")
                         f_test.write(str(outputs[output_i]))
                         for ou in logits[output_i]:
                             f_test.write(" "+str(ou))
