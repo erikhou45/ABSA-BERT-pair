@@ -271,9 +271,9 @@ def main():
     if args.eval_only:
         if args.save_model:
             raise ValueError("No training when running in evaluation only mode, so no models to save")
-        if args.eval_test:
+        if not args.eval_test:
             raise ValueError("eval_test parameter has to be true and eval_only is true")
-        if os.path.isdir(args.init_checkpoint):
+        if not os.path.isdir(args.init_checkpoint):
             raise ValueError("in eval only mode, the init_checkpoint should be a directory")
         
         checkpoints = [os.path.join(args.init_checkpoint, file_name) for file_name in os.listdir(args.init_checkpoint) 
@@ -432,7 +432,7 @@ def main():
     epoch=0
     
     if not args.eval_only:
-        total_epochs = args.num_train_epochs
+        total_epochs = int(args.num_train_epochs)
     else:
         total_epochs = len(checkpoints)
         
@@ -461,7 +461,7 @@ def main():
         else:
             # model and optimizer
             model = BertForSequenceClassification(bert_config, len(label_list))
-            model.bert.load_state_dict(torch.load(checkpoints[epoch], map_location='cpu'))
+            model.load_state_dict(torch.load(checkpoints[epoch], map_location='cpu'))
             model.to(device)
 
             if args.local_rank != -1:
@@ -530,7 +530,7 @@ def main():
             writer.write("\n")
 
         if args.save_model:
-            torch.save(model.state_dict(), os.path.join(args.output_dir,f"epoch_{epoch}_model.bin"))
+            torch.save(model.module.state_dict(), os.path.join(args.output_dir,f"epoch_{epoch}_model.bin"))
 
 if __name__ == "__main__":
     main()
