@@ -262,9 +262,26 @@ def main():
                         default=False,
                         action='store_true',
                         help="Whether to write the model checkpoints to disk")
+    parser.add_argument("--eval_only",
+                        default=False,
+                        action='store_true',
+                        help="Whether to only run evaluation on models under the checkpoint directory")
     args = parser.parse_args()
 
-
+    if args.eval_only:
+        if args.save_model:
+            raise ValueError("No training when running in evaluation only mode, so no models to save")
+        if args.eval_test:
+            raise ValueError("eval_test parameter has to be true and eval_only is true")
+        if os.path.isdir(args.init_checkpoint):
+            raise ValueError("in eval only mode, the init_checkpoint should be a directory")
+        
+        checkpoints = [os.path.join(args.init_checkpoint, file_name) for file_name in os.listdir(args.init_checkpoint) 
+                                                                         if file_name[-4:] == '.bin']
+        if not checkpoints:
+            raise RuntimeError("BERT checkpoint not available for evaluation")
+    
+    
     if args.local_rank == -1 or args.no_cuda:
         device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
         n_gpu = torch.cuda.device_count()
@@ -327,30 +344,31 @@ def main():
         vocab_file=args.vocab_file, do_lower_case=args.do_lower_case)
 
     # training set
-    train_examples = None
-    num_train_steps = None
-    # pass in the specific file name for training if it's specified
-    if args.train_file_name:
-        train_examples = processor.get_train_examples(args.data_dir, args.train_file_name)
-    else:
-        train_examples = processor.get_train_examples(args.data_dir)
-    num_train_steps = int(
-        len(train_examples) / args.train_batch_size * args.num_train_epochs)
+    if not args.eval_only:
+        train_examples = None
+        num_train_steps = None
+        # pass in the specific file name for training if it's specified
+        if args.train_file_name:
+            train_examples = processor.get_train_examples(args.data_dir, args.train_file_name)
+        else:
+            train_examples = processor.get_train_examples(args.data_dir)
+        num_train_steps = int(
+            len(train_examples) / args.train_batch_size * args.num_train_epochs)
 
-    train_features = convert_examples_to_features(
-        train_examples, label_list, args.max_seq_length, tokenizer)
+        train_features = convert_examples_to_features(
+            train_examples, label_list, args.max_seq_length, tokenizer)
 
-    all_input_ids = torch.tensor([f.input_ids for f in train_features], dtype=torch.long)
-    all_input_mask = torch.tensor([f.input_mask for f in train_features], dtype=torch.long)
-    all_segment_ids = torch.tensor([f.segment_ids for f in train_features], dtype=torch.long)
-    all_label_ids = torch.tensor([f.label_id for f in train_features], dtype=torch.long)
+        all_input_ids = torch.tensor([f.input_ids for f in train_features], dtype=torch.long)
+        all_input_mask = torch.tensor([f.input_mask for f in train_features], dtype=torch.long)
+        all_segment_ids = torch.tensor([f.segment_ids for f in train_features], dtype=torch.long)
+        all_label_ids = torch.tensor([f.label_id for f in train_features], dtype=torch.long)
 
-    train_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label_ids)
-    if args.local_rank == -1:
-        train_sampler = RandomSampler(train_data)
-    else:
-        train_sampler = DistributedSampler(train_data)
-    train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=args.train_batch_size)
+        train_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label_ids)
+        if args.local_rank == -1:
+            train_sampler = RandomSampler(train_data)
+        else:
+            train_sampler = DistributedSampler(train_data)
+        train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=args.train_batch_size)
 
     # test set
     if args.eval_test:
@@ -370,33 +388,35 @@ def main():
         test_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label_ids)
         test_dataloader = DataLoader(test_data, batch_size=args.eval_batch_size, shuffle=False)
     
-    logger.info("***** Running training *****")
-    logger.info("  Num examples = %d", len(train_examples))
-    logger.info("  Batch size = %d", args.train_batch_size)
-    logger.info("  Num steps = %d", num_train_steps)
+    # training setup
+    if not args.eval_only:
+        logger.info("***** Running training *****")
+        logger.info("  Num examples = %d", len(train_examples))
+        logger.info("  Batch size = %d", args.train_batch_size)
+        logger.info("  Num steps = %d", num_train_steps)
 
-    # model and optimizer
-    model = BertForSequenceClassification(bert_config, len(label_list))
-    if args.init_checkpoint is not None:
-        model.bert.load_state_dict(torch.load(args.init_checkpoint, map_location='cpu'))
-    model.to(device)
+        # model and optimizer
+        model = BertForSequenceClassification(bert_config, len(label_list))
+        if args.init_checkpoint is not None:
+            model.bert.load_state_dict(torch.load(args.init_checkpoint, map_location='cpu'))
+        model.to(device)
 
-    if args.local_rank != -1:
-        model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.local_rank],
-                                                          output_device=args.local_rank)
-    elif n_gpu > 1:
-        model = torch.nn.DataParallel(model)
+        if args.local_rank != -1:
+            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.local_rank],
+                                                              output_device=args.local_rank)
+        elif n_gpu > 1:
+            model = torch.nn.DataParallel(model)
 
-    no_decay = ['bias', 'gamma', 'beta']
-    optimizer_parameters = [
-         {'params': [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)], 'weight_decay_rate': 0.01},
-         {'params': [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)], 'weight_decay_rate': 0.0}
-         ]
-		
-    optimizer = BERTAdam(optimizer_parameters,
-                         lr=args.learning_rate,
-                         warmup=args.warmup_proportion,
-                         t_total=num_train_steps)
+        no_decay = ['bias', 'gamma', 'beta']
+        optimizer_parameters = [
+             {'params': [p for n, p in model.named_parameters() if not any(nd in n for nd in no_decay)], 'weight_decay_rate': 0.01},
+             {'params': [p for n, p in model.named_parameters() if any(nd in n for nd in no_decay)], 'weight_decay_rate': 0.0}
+             ]
+
+        optimizer = BERTAdam(optimizer_parameters,
+                             lr=args.learning_rate,
+                             warmup=args.warmup_proportion,
+                             t_total=num_train_steps)
 
 
     # train
@@ -410,28 +430,49 @@ def main():
     
     global_step = 0
     epoch=0
-    for _ in trange(int(args.num_train_epochs), desc="Epoch"):
-        epoch+=1
-        model.train()
-        tr_loss = 0
-        nb_tr_examples, nb_tr_steps = 0, 0
-        for step, batch in enumerate(tqdm(train_dataloader, desc="Train Iteration")):
-            batch = tuple(t.to(device) for t in batch)
-            input_ids, input_mask, segment_ids, label_ids = batch
-            loss, _ = model(input_ids, segment_ids, input_mask, label_ids)
-            if n_gpu > 1:
-                loss = loss.mean() # mean() to average on multi-gpu.
-            if args.gradient_accumulation_steps > 1:
-                loss = loss / args.gradient_accumulation_steps
-            loss.backward()
-            tr_loss += loss.item()
-            nb_tr_examples += input_ids.size(0)
-            nb_tr_steps += 1
-            if (step + 1) % args.gradient_accumulation_steps == 0:
-                optimizer.step()    # We have accumulated enought gradients
-                model.zero_grad()
-                global_step += 1
+    
+    if not args.eval_only:
+        total_epochs = args.num_train_epochs
+    else:
+        total_epochs = len(checkpoints)
         
+    
+    for _ in trange(total_epochs, desc="Epoch"):
+        if not args.eval_only:
+            model.train()
+            tr_loss = 0
+            nb_tr_examples, nb_tr_steps = 0, 0
+            for step, batch in enumerate(tqdm(train_dataloader, desc="Train Iteration")):
+                batch = tuple(t.to(device) for t in batch)
+                input_ids, input_mask, segment_ids, label_ids = batch
+                loss, _ = model(input_ids, segment_ids, input_mask, label_ids)
+                if n_gpu > 1:
+                    loss = loss.mean() # mean() to average on multi-gpu.
+                if args.gradient_accumulation_steps > 1:
+                    loss = loss / args.gradient_accumulation_steps
+                loss.backward()
+                tr_loss += loss.item()
+                nb_tr_examples += input_ids.size(0)
+                nb_tr_steps += 1
+                if (step + 1) % args.gradient_accumulation_steps == 0:
+                    optimizer.step()    # We have accumulated enought gradients
+                    model.zero_grad()
+                    global_step += 1
+        else:
+            # model and optimizer
+            model = BertForSequenceClassification(bert_config, len(label_list))
+            model.bert.load_state_dict(torch.load(checkpoints[epoch], map_location='cpu'))
+            model.to(device)
+
+            if args.local_rank != -1:
+                model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.local_rank],
+                                                                  output_device=args.local_rank)
+            elif n_gpu > 1:
+                model = torch.nn.DataParallel(model)
+                
+            global_step = -1
+            
+        epoch+=1
         # eval_test
         if args.eval_test:
             model.eval()
