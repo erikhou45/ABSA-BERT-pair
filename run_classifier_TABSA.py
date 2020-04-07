@@ -435,7 +435,7 @@ def main():
         total_epochs = int(args.num_train_epochs)
     else:
         total_epochs = len(checkpoints)
-        
+        checkpoints.sort()
     
     for _ in trange(total_epochs, desc="Epoch"):
         if not args.eval_only:
@@ -471,8 +471,10 @@ def main():
                 model = torch.nn.DataParallel(model)
                 
             global_step = -1
-            
-        epoch+=1
+            tr_loss = -1
+            nb_tr_steps = 1
+        
+        epoch += 1    
         # eval_test
         if args.eval_test:
             model.eval()
