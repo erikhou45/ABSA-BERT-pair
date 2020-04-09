@@ -12,7 +12,7 @@ if not os.path.exists(dir_path):
 file_names = get_files(data_dir)
 
 for file_name in file_names:
-    with open(dir_path+file_name[:-4]+"_NLI_M.csv","w",encoding="utf-8") as g:
+    with open(dir_path+file_name[:-4]+"_NLI_M_40.csv","w",encoding="utf-8") as g:
         with open(data_dir+file_name,"r",encoding="utf-8") as f:
             s=f.readline().strip()   
             while s:
@@ -41,7 +41,8 @@ for file_name in file_names:
                     for target in targets:
                         for aspect in ASPECTS:
                             if (target,aspect) in polarity:
-                                g.write(id+"\t"+cal_polarity(polarity[(target,aspect)])+"\t"+target+"-"+aspect+"\t"+text+"\n")
+                                for i in range(40):
+                                    g.write(id+"\t"+cal_polarity(polarity[(target,aspect)])+"\t"+target+"-"+aspect+"\t"+text+"\n")
                             else:
                                 g.write(id+"\t"+"none"+"\t"+target+"-"+aspect+"\t"+text+"\n")
                 else:
