@@ -42,7 +42,7 @@ for file_name in file_names:
                         for aspect in ASPECTS:
                             if (target,aspect) in polarity:
                                 for i in range(40):
-                                    g.write(id+"\t"+cal_polarity(polarity[(target,aspect)])+"\t"+target+"-"+aspect+"\t"+text+"\n")
+                                    g.write("**DUP**-"+id+"\t"+cal_polarity(polarity[(target,aspect)])+"\t"+target+"-"+aspect+"\t"+text+"\n")
                             else:
                                 g.write(id+"\t"+"none"+"\t"+target+"-"+aspect+"\t"+text+"\n")
                 else:

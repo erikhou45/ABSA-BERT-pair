@@ -44,7 +44,7 @@ class InputFeatures(object):
         self.label_id = label_id
 
 
-def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer):
+def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer, seed=5):
     """Loads a data file into a list of `InputBatch`s."""
 
     label_map = {}
@@ -52,13 +52,24 @@ def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer
         label_map[label] = i
 
     features = []
+    rg1 = random.Random(seed)
+    rg2 = random.Random(seed)
     for (ex_index, example) in enumerate(tqdm(examples)):
         tokens_a = tokenizer.tokenize(example.text_a)
 
         tokens_b = None
         if example.text_b:
             tokens_b = tokenizer.tokenize(example.text_b)
-
+            # if a example is duplicated and long enough, randomly take out 1 to 2 tokens
+            if example.guid[0] == "DUP" and len(tokens_b) > 10:
+                rand_num = rg1.random()
+                if rand_num < 0.25:
+                    for i in range(2):
+                        pos = rg2.randint(0,len(tokens_b)-1)
+                        tokens_b.pop(pos)
+                elif rand_num < 0.5:
+                    pos = rg2.randint(0,len(tokens_b)-1)
+                    tokens_b.pop(pos)
         if tokens_b:
             # Modifies `tokens_a` and `tokens_b` in place so that the total
             # length is less than the specified length.
