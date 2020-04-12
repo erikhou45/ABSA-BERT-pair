@@ -28,20 +28,20 @@ for file_name in file_names:
                             right=s.find("</text>")
                             text=s[left+6:right]
                         if "<Opinion category" in s:
+                            s = s.replace(" ", "")
                             left=s.find("category=")
                             pound=s.find("#")
                             right=s.find("polarity=")
                             target=s[left+10:pound]
-                            aspect=s[pound+1:right-2]
+                            aspect=s[pound+1:right-1]
                             left=s.find("polarity=")
                             right=s.find("/>")
-                            polarity[(target,aspect)].append(quantify_polarity(s[left+10:right-1]))
+                            polarity[(target,aspect)] = s[left+10:right-1]
                         s=f.readline().strip()
-                    targets = LAPTOP_TARGETS if "Laptop" in file_name else CELL_TARGETS
-                    for target in targets:
+                    for target in LAPTOP_TARGETS:
                         for aspect in ASPECTS:
                             if (target,aspect) in polarity:
-                                g.write(id+"\t"+cal_polarity(polarity[(target,aspect)])+"\t"+target+"-"+aspect+"\t"+text+"\n")
+                                g.write(id+"\t"+polarity[(target,aspect)]+"\t"+target+"-"+aspect+"\t"+text+"\n")
                             else:
                                 g.write(id+"\t"+"none"+"\t"+target+"-"+aspect+"\t"+text+"\n")
                 else:
