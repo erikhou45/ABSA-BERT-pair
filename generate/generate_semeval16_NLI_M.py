@@ -28,7 +28,7 @@ for file_name in file_names:
                             right=s.find("</text>")
                             text=s[left+6:right]
                         if "<Opinion category" in s:
-                            s = s.replace(" ", "")
+                            s = s.replace(" ", "").replace("&apos;", "'")
                             left=s.find("category=")
                             pound=s.find("#")
                             right=s.find("polarity=")
