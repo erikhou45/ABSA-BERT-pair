@@ -18,7 +18,7 @@ for file_name in file_names:
             while s:
                 category=[]
                 polarity = defaultdict(lambda: [])
-                if "<sentence id" in s:
+                if "<sentence id" in s and "OutOfScope" not in s:
                     left=s.find("id")
                     right=s.find(">")
                     id=s[left+4:right-1]
