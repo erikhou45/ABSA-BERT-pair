@@ -5,12 +5,13 @@ from collections import defaultdict
 from data_utils_semeval16 import *
 
 data_dir = "../data/semeval2016/"
-dir_path = data_dir + "bert-pair/"
-file_names = ["EN_Laptop_Text_Train.xml"]
+dir_path = data_dir + "bert-pair/text-level/"
+file_names = {"EN_Laptop_Text_Train.xml": "EN_Laptop_Text_Train_Complete_NLI_M.csv",
+              "EN_Laptop_Text_Test_Gold.xml": "EN_Laptop_Text_Test_Gold_NLI_M.csv"}
 
-for file_name in file_names:
-    with open(dir_path+file_name[:-4]+"_NLI_M.csv","w",encoding="utf-8") as g:
-        with open(data_dir+file_name,"r",encoding="utf-8") as f:
+for key in file_names:
+    with open(dir_path+file_names[key],"w",encoding="utf-8") as g:
+        with open(data_dir+key,"r",encoding="utf-8") as f:
             s=f.readline().strip()   
             review_count = 0
             while s:
@@ -50,7 +51,7 @@ for file_name in file_names:
             print(f"processed {review_count} reivews")
 
 
-train_file = dir_path+file_name[:-4]+"_NLI_M.csv"
+train_file = dir_path+file_names["EN_Laptop_Text_Train.xml"]
 train_file_df = pd.read_csv(train_file, 
                        delimiter = "\t",
                        names = ["review_id", "label", "entity:aspect", "text"]
@@ -62,8 +63,8 @@ dev_reviews = review_ids.sample(80, random_state=rand_state)
 dev_df = train_file_df.merge(dev_reviews.to_frame(), how = "inner", on = "review_id").iloc[:,:4]
 train_df = train_file_df.merge(dev_reviews, how = "outer", on = "review_id", indicator = True)
 train_df = train_df[train_df._merge == "left_only"].iloc[:,:4]
-dev_df.to_csv("../data/semeval2016/bert-pair/text-level/EN_Laptop_Text_Dev_NLI_M.csv", sep = "\t", index = False, header = False)
-train_df.to_csv("../data/semeval2016/bert-pair/text-level/EN_Laptop_Text_Train_NLI_M.csv", sep = "\t", index = False, header = False)
+dev_df.to_csv(dir_path + "original/EN_Laptop_Text_Dev_NLI_M.csv", sep = "\t", index = False, header = False)
+train_df.to_csv(dir_path + "original/EN_Laptop_Text_Train_NLI_M.csv", sep = "\t", index = False, header = False)
 
 print(train_file_df.review_id.drop_duplicates().count())
 print(dev_df.review_id.drop_duplicates().count())
