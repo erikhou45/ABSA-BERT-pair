@@ -8,6 +8,7 @@ from data_utils_semeval16 import *
 
 data_dir = "../data/semeval2016/"
 dir_path = data_dir + "bert-pair/text-level/"
+os.makedirs(dir_path)
 file_names = {"EN_Laptop_Text_Train.xml": "EN_Laptop_Text_Train_Complete_NLI_M.csv",
               "EN_Laptop_Text_Test_Gold.xml": "EN_Laptop_Text_Test_Gold_NLI_M.csv"}
 
