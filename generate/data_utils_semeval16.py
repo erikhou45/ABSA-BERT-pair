@@ -22,3 +22,8 @@ ASPECTS = [
     "USABILITY", "DESIGN_FEATURES", "PORTABILITY", 
     "CONNECTIVITY", "MISCELLANEOUS"
 ]
+
+SAMPLING = {"Over_":(12,1),
+            "Under_":(1,0.08),
+            "Combo_":(5,0.4)
+           }

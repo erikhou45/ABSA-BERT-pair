@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import os
+import random
 from collections import defaultdict
 
 from data_utils_semeval16 import *
@@ -63,9 +65,33 @@ dev_reviews = review_ids.sample(80, random_state=rand_state)
 dev_df = train_file_df.merge(dev_reviews.to_frame(), how = "inner", on = "review_id").iloc[:,:4]
 train_df = train_file_df.merge(dev_reviews, how = "outer", on = "review_id", indicator = True)
 train_df = train_df[train_df._merge == "left_only"].iloc[:,:4]
-dev_df.to_csv(dir_path + "original/EN_Laptop_Text_Dev_NLI_M.csv", sep = "\t", index = False, header = False)
-train_df.to_csv(dir_path + "original/EN_Laptop_Text_Train_NLI_M.csv", sep = "\t", index = False, header = False)
+dev_df.to_csv(os.path.join(dir_path,"EN_Laptop_Text_Dev_NLI_M.csv"), sep = "\t", index = False, header = False)
+train_df.to_csv(os.path.join(dir_path,"EN_Laptop_Text_Train_NLI_M.csv"), sep = "\t", index = False, header = False)
 
 print(train_file_df.review_id.drop_duplicates().count())
 print(dev_df.review_id.drop_duplicates().count())
 print(train_df.review_id.drop_duplicates().count())
+
+
+random.seed(10)
+
+files = ["EN_Laptop_Text_Train_NLI_M.csv"]
+
+for key in SAMPLING:
+    sample_type = key
+    over_sampl_multiplier, under_sampl_multiplier = SAMPLING[key]
+    for file in files:
+        input_file = os.path.join(dir_path, file)
+        output_file = os.path.join(dir_path, file[:-9] + sample_type + file[-9:])
+        with open(output_file, "w", encoding="utf-8") as g:
+            with open(input_file, "r", encoding="utf-8") as f:
+                l=f.readline().strip() 
+                while l:
+                    rid, polarity, category, text = l.split("\t")
+                    if polarity == "none":
+                        if random.random() < under_sampl_multiplier:
+                            g.write(rid+"\t"+polarity+"\t"+category+"\t"+text+"\n")
+                    else:
+                        for i in range(over_sampl_multiplier):
+                            g.write(rid+"\t"+polarity+"\t"+category+"\t"+text+"\n")
+                    l = f.readline().strip()
