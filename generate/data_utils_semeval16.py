@@ -23,7 +23,13 @@ ASPECTS = [
     "CONNECTIVITY", "MISCELLANEOUS"
 ]
 
-SAMPLING = {"Over_":(12,1),
-            "Under_":(1,0.08),
-            "Combo_":(5,0.4)
+# SAMPLING = {"Over_":(12,1),
+#             "Under_":(1,0.08),
+#             "Combo_":(5,0.4)
+#            }
+SAMPLING = {"Over_2_":{"positive":2,"neutral":2,"negative":2,"conflict":2,"none":1},
+            "Over_Mix_1_":{"positive":1.5,"neutral":3,"negative":2.2,"conflict":5,"none":1},
+            "Combo_5_04_":{"positive":5,"neutral":5,"negative":5,"conflict":5,"none":0.4},
+            "Combo_3_045_":{"positive":3,"neutral":3,"negative":3,"conflict":3,"none":0.45},
+            "Combo_2_05_":{"positive":2,"neutral":2,"negative":2,"conflict":2,"none":0.5}
            }

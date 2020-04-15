@@ -8,7 +8,7 @@ from data_utils_semeval16 import *
 
 data_dir = "../data/semeval2016/"
 dir_path = data_dir + "bert-pair/text-level/"
-os.makedirs(dir_path)
+os.makedirs(dir_path, exist_ok=True)
 file_names = {"EN_Laptop_Text_Train.xml": "EN_Laptop_Text_Train_Complete_NLI_M.csv",
               "EN_Laptop_Text_Test_Gold.xml": "EN_Laptop_Text_Test_Gold_NLI_M.csv"}
 
@@ -74,13 +74,14 @@ print(dev_df.review_id.drop_duplicates().count())
 print(train_df.review_id.drop_duplicates().count())
 
 
-random.seed(10)
+rg_none = random.Random(10)
+rg_others = random.Random(5)
 
 files = ["EN_Laptop_Text_Train_NLI_M.csv"]
 
 for key in SAMPLING:
     sample_type = key
-    over_sampl_multiplier, under_sampl_multiplier = SAMPLING[key]
+    multipliers = SAMPLING[key]
     for file in files:
         input_file = os.path.join(dir_path, file)
         output_file = os.path.join(dir_path, file[:-9] + sample_type + file[-9:])
@@ -90,9 +91,11 @@ for key in SAMPLING:
                 while l:
                     rid, polarity, category, text = l.split("\t")
                     if polarity == "none":
-                        if random.random() < under_sampl_multiplier:
+                        if rg_none.random() < multipliers["none"]:
                             g.write(rid+"\t"+polarity+"\t"+category+"\t"+text+"\n")
                     else:
-                        for i in range(over_sampl_multiplier):
+                        for i in range(int(multipliers[polarity])):
+                            g.write(rid+"\t"+polarity+"\t"+category+"\t"+text+"\n")
+                        if rg_others.random() < (multipliers[polarity] % 1):
                             g.write(rid+"\t"+polarity+"\t"+category+"\t"+text+"\n")
                     l = f.readline().strip()
