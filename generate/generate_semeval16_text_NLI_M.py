@@ -77,7 +77,7 @@ print(train_df.review_id.drop_duplicates().count())
 rg_none = random.Random(10)
 rg_others = random.Random(5)
 
-files = ["EN_Laptop_Text_Train_NLI_M.csv"]
+files = ["EN_Laptop_Text_Train_NLI_M.csv", "EN_Laptop_Text_Train_Complete_NLI_M.csv"]
 
 for key in SAMPLING:
     sample_type = key
