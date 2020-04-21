@@ -1,4 +1,4 @@
-# ABSA-BERT-pair
+# Cross-Lingual Aspect-Based Sentiment Analysis with Multilingual BERT
 W266 Final Project
 
 This is the repo for Erik's MIDS W266 file project. It was originally forked from https://github.com/HSLCY/ABSA-BERT-pair. To see the original readme about executing the code https://github.com/erikhou45/ABSA-BERT-pair/blob/master/README_original.md  
